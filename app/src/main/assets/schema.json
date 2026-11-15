@@ -1,0 +1,40 @@
+{
+  "packageName": "com.iclab.steerscore",
+  "appDescription": "A driving score app that grades steering and speed habits during a drive and explains each deduction.",
+  "version": "1.0.0",
+  "actionCalls": [
+    {
+      "type": "function",
+      "function": {
+        "name": "GET_RECENT_DEDUCTIONS",
+        "description": "Returns the driving score deductions of the last few minutes with their reason, place and advice.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "minutes": { "type": "number", "description": "How many minutes back to look." }
+          },
+          "required": []
+        },
+        "component": "service"
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "GET_DRIVE_SUMMARY",
+        "description": "Returns the current drive's driving score and the deductions so far, grouped by reason.",
+        "parameters": { "type": "object", "properties": {}, "required": [] },
+        "component": "service"
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "GET_HABIT_TO_FIX",
+        "description": "Returns the driving habits that cost the most points over the recorded drives and the points each would add.",
+        "parameters": { "type": "object", "properties": {}, "required": [] },
+        "component": "service"
+      }
+    }
+  ]
+}

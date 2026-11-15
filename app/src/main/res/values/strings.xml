@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SteerScore</string>
+    <string name="tagline">조향까지 보는 운전점수</string>
+
+    <string name="mode_live">실시간</string>
+    <string name="mode_replay">시나리오 재생</string>
+    <string name="trip_start">주행 시작</string>
+    <string name="trip_stop">주행 종료</string>
+    <string name="replay_start">재생 시작</string>
+    <string name="replay_stop">재생 중지</string>
+
+    <string name="panel_events">감지된 이벤트</string>
+    <string name="panel_trace">횡가속도 (조향 기반 추정)</string>
+    <string name="panel_compare">같은 경로 비교 (최근 결과)</string>
+    <string name="label_baseline">기존 방식 (속도)</string>
+    <string name="label_steer">SteerScore (속도+조향)</string>
+    <string name="no_events">아직 감지된 이벤트가 없어요</string>
+    <string name="no_history">기록 없음</string>
+    <string name="score_unit">점</string>
+
+    <string name="cond_normal">주간</string>
+    <string name="cond_night">야간</string>
+
+    <string name="trip_idle">대기 중 — 기어를 D로 바꾸거나 주행 시작을 누르세요</string>
+    <string name="report_open">리포트</string>
+    <string name="report_close">닫기</string>
+    <string name="route_open">경로 추천</string>
+    <string name="route_title">경로 추천</string>
+    <string name="route_live">다른 옵션 비교</string>
+    <string name="route_driver">운전자 페르소나</string>
+    <string name="route_od">자주 가는 목적지</string>
+    <string name="coach_tone">알림음</string>
+    <string name="coach_on">음성 코칭</string>
+    <string name="coach_off">코칭 끔</string>
+    <string name="report_navi_map">내비 지도</string>
+    <string name="report_navi_unavailable">내비를 열 수 없어요</string>
+    <string name="report_title">주행 리포트</string>
+    <string name="report_timeline">언제, 무엇 때문에 점수가 떨어졌나</string>
+    <string name="report_causes">감점 요인 Top 3</string>
+    <string name="report_missed">기존 방식이 놓친 감점</string>
+    <string name="report_tips">다음 주행 목표</string>
+    <string name="report_clean">감점 없는 주행이에요. 지금처럼 운전하세요.</string>
+    <string name="report_tab_trip">이번 주행</string>
+    <string name="report_tab_insights">누적 분석</string>
+    <string name="insight_map">어디서 자주 점수가 떨어지나</string>
+    <string name="insight_roads">상황별 감점</string>
+    <string name="insight_classes">도로 유형별 감점 (내비 경로 안내)</string>
+    <string name="insight_route_map">이번 경로에서 점수가 떨어진 곳</string>
+    <string name="report_situations">상황별 감점</string>
+    <string name="report_map">이번 주행 지도 · 감점이 생긴 곳</string>
+    <string name="report_list">시간순 상황 · 감점</string>
+    <string name="report_map_all">전체 보기</string>
+    <string name="report_groups">도로 유형별 감점 요인</string>
+    <string name="report_groups_situation">상황별 감점 요인 (내비 경로 안내 없음)</string>
+    <string name="insight_habits">다음 주행 미션</string>
+    <string name="insight_goal">이번 주 목표</string>
+    <string name="insight_seed">다른 길 5회 추가</string>
+    <string name="insight_seed_route">실제 도로 3회 추가</string>
+    <string name="insight_clear">기록 지우기 (길게 누르기)</string>
+    <string name="insight_empty">아직 기록된 주행이 없어요. 주행하거나 시나리오를 끝까지 재생하면 쌓입니다.</string>
+    <string name="driving_detail">자세히 보기</string>
+    <string name="driving_simple">간단히 보기</string>
+    <string name="demo_mode">시연 모드</string>
+    <string name="driving_safe">안전 운전 중</string>
+</resources>

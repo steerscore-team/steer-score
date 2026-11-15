@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature android:name="android.hardware.type.automotive" android:required="true" />
+
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+    <uses-permission android:name="pleos.car.permission.CAR_LIGHTS" />
+    <!-- Pleos FusedLocation places deductions on the cumulative map; the data stays in the app -->
+    <uses-permission android:name="pleos.car.permission.FUSED_LOCATION" />
+    <!-- Pleos navigation (NaviHelper): current road speed limit and address -->
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE" />
+    <!-- Route recommendation: changeRouteOption() to read each RouteOption's route, and to apply the one picked -->
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE_SEARCH" />
+    <!-- Opening the navigation map screen (requestNavigationScreen) -->
+    <uses-permission android:name="pleos.car.permission.NAVI_CUSTOM_MAP" />
+    <!-- Voice coaching with the Pleos TextToSpeech SDK (ON_DEVICE mode) -->
+    <uses-permission android:name="pleos.car.permission.TTS_SERVICE" />
+    <!-- Live mode keeps running while the navigation is in front (DriveKeepAliveService) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- The score screen stays usable while driving -->
+            <meta-data android:name="distractionOptimized" android:value="true" />
+        </activity>
+        <!-- Gleo AI calls these functions (assets/schema.json) when the driver asks, and gets the answer back -->
+        <receiver
+            android:name=".GleoReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="GET_RECENT_DEDUCTIONS" />
+                <action android:name="GET_DRIVE_SUMMARY" />
+                <action android:name="GET_HABIT_TO_FIX" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name=".DriveKeepAliveService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Driving score and voice coaching while the navigation is in front" />
+        </service>
+    </application>
+</manifest>

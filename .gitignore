@@ -1,0 +1,16 @@
+.gradle/
+build/
+app/build/
+local.properties
+keystore.properties
+*.jks
+*.keystore
+
+# Synthetic training data (regenerate with -PexportDataset)
+ml/data/
+.kotlin/
+*.iml
+.idea/
+__pycache__/
+*.pyc
+tools/.route_map_cache/
